@@ -1,8 +1,6 @@
 require './lib/docking_station'
 
 describe DockingStation do
-  # it 'responds to release_bike' do
-  #   expect(subject).to respond_to :release_bike
 
   it { is_expected.to respond_to :release_bike}
 
@@ -21,14 +19,9 @@ it "doesn't have any bikes" do
  expect {subject.release_bike}.to raise_error("Sorry mate, no bikes left")
   end
 
-before (:example) do
-  @newdock = DockingStation.new
-20.times { @newdock.dock(Bike.new) }
-end
-
 it "does not have room for more bikes" do
-  # subject.bikes != []
-  # capacity = subject().capacity
+  @newdock = DockingStation.new
+  20.times { @newdock.dock(Bike.new) }
  expect {@newdock.dock(Bike.new)}.to raise_error("No slots available")
   end
 end
