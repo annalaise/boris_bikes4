@@ -1,7 +1,12 @@
 require './lib/docking_station.rb'
 
 bike1 = Bike.new
-bike2 = BrokenBike.new
 dock1 = DockingStation.new
-dock1.dock(bike1) # docks working bike
-dock1.dock(bike2.broken)# docks broken bike
+
+# Docking a working bike
+dock1.dock(bike1)
+# we expect this to appear in the @bikes arr.
+
+# Docking a broken bike
+# Dock requires user to indicate bike is broken
+dock1.dock(Bike.new(false) # this docks a broken bike
