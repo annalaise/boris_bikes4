@@ -1,4 +1,5 @@
-require_relative 'bike'
+require './lib/bike.rb'
+require './lib/broken_bike.rb'
 
 class DockingStation
   attr_reader :bikes
@@ -10,27 +11,22 @@ class DockingStation
   @capacity = capacity
   end
 
+  def dock(bike)
+    @bikes << bike
+  end 
+
   def release_bike
   	fail "Sorry mate, no bikes left" if empty?
-  end
-
-  def dock(bike)
-    fail "No slots available" if full?
-    @bikes << bike
-  end
-
-  def broken(bike)
-    bike = 'This bike is broken'
   end
 
 private
 
   def full?
-    @bikes.length >= @capacity ? true : false
+    @bikes.length >= @capacity
   end
 
   def empty?
-    @bikes.empty? ? true : false
+    @bikes.empty?
   end
 
 end

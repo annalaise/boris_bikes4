@@ -1,13 +1,10 @@
+require './lib/docking_station.rb'
+
 class Bike
-	def initialize(status = 'working')
-		@status = status
-	end
-		
-	def working?
-true
+attr_reader :working
+
+	def initialize(working=true)
+		@working = working
 	end
 
-	def broken?
-true
-	end
 end

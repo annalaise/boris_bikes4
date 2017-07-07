@@ -1,5 +1,7 @@
-require '../lib/docking_station.rb'
+require './lib/docking_station.rb'
 
-station = DockingStation.new
-station.dock(Bike.new)
-station.bikes.broken?
+bike1 = Bike.new
+bike2 = BrokenBike.new
+dock1 = DockingStation.new
+dock1.dock(bike1) # docks working bike
+dock1.dock(bike2.broken)# docks broken bike
